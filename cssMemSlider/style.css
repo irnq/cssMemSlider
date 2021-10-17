@@ -40,11 +40,21 @@ main {
   overflow: hidden;
 }
 .slider-description {
+  display: flex;
+  overflow: hidden;
+}
+.slide-text {
   font-size: 1.9rem;
   color: #fff;
+  padding-top: 0.3rem;
+  flex: 0 0 100.1%;
+
+  height: 100%;
+  transition: all 0.4s;
   text-shadow: 0 0.1rem 0 #000, 0.1rem 0.1rem 0 #000, 0.1rem -0.1rem 0 #000, -0.1rem 0.1rem 0 #000,
     -0.1rem -0.1rem 0 #000, 0.1rem 0 0 #000, -0.1rem 0 0 #000, 0 -0.1rem 0 #000;
 }
+
 .hidden {
   display: none;
 }
@@ -55,6 +65,8 @@ main {
 }
 .slider-control {
   display: flex;
+  flex: 0 0 25%;
+  justify-content: flex-end;
 }
 .btn-img {
   display: block;
@@ -90,7 +102,7 @@ main {
   background-color: #243857;
 }
 .slider-img {
-  transition: all 0.3s;
+  transition: all 0.4s;
   width: 60rem;
   height: 30rem;
   background-size: cover;
@@ -149,20 +161,25 @@ main {
   border: 0.1rem solid #71a5f1;
   background-color: #243857;
 }
-#slide1:checked ~ .slider-footer > .slider-description::after {
-  content: 'My face when I got the task to make a slider without JS';
+#slide1:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'My face when I got the task to make a slider without JS'; */
+  transform: translateX(0);
 }
-#slide2:checked ~ .slider-footer > .slider-description::after {
-  content: 'Me: suggested it was a joke';
+#slide2:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: suggested it was a joke'; */
+  transform: translateX(-100%);
 }
-#slide3:checked ~ .slider-footer > .slider-description::after {
-  content: 'Me: realize that no. NOOOO!';
+#slide3:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: realize that no. NOOOO!'; */
+  transform: translateX(-200%);
 }
-#slide4:checked ~ .slider-footer > .slider-description::after {
-  content: 'Me: hope we will rock you';
+#slide4:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: hope we will rock you'; */
+  transform: translateX(-300%);
 }
-#slide5:checked ~ .slider-footer > .slider-description::after {
-  content: 'Hah that was easy!';
+#slide5:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Hah that was easy!'; */
+  transform: translateX(-400%);
 }
 @media only screen and (max-width: 500px) {
   * {
