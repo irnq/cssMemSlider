@@ -1,0 +1,205 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+body {
+  width: auto;
+  height: 100%;
+  background-color: #3f4346;
+}
+main {
+  max-width: 63rem;
+  padding: 0 1.5rem;
+  margin: 4rem auto;
+}
+.slider-header {
+  padding-bottom: 4rem;
+  text-align: center;
+}
+.heading {
+  font-size: 5rem;
+
+  color: #71f19c;
+  margin-bottom: 2rem;
+}
+.heading-txt {
+  font-size: 2rem;
+  color: #71f19c;
+}
+.heading-txt::after {
+  padding-top: 1rem;
+  display: block;
+  content: 'now: Desktop verson';
+}
+.slider-box {
+  display: flex;
+  max-height: 30rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+.slider-description {
+  display: flex;
+  overflow: hidden;
+}
+.slide-text {
+  font-size: 1.9rem;
+  color: #fff;
+  padding-top: 0.3rem;
+  flex: 0 0 100.1%;
+
+  height: 100%;
+  transition: all 0.4s;
+  text-shadow: 0 0.1rem 0 #000, 0.1rem 0.1rem 0 #000, 0.1rem -0.1rem 0 #000, -0.1rem 0.1rem 0 #000,
+    -0.1rem -0.1rem 0 #000, 0.1rem 0 0 #000, -0.1rem 0 0 #000, 0 -0.1rem 0 #000;
+}
+
+.hidden {
+  display: none;
+}
+.slider-footer {
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.slider-control {
+  display: flex;
+  flex: 0 0 25%;
+  justify-content: flex-end;
+}
+.btn-img {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  position: relative;
+  transition: all 0.3s;
+}
+.btn-img::after {
+  top: 0.9rem;
+  left: 0.9rem;
+  display: block;
+  position: relative;
+  content: '';
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 0.1rem solid #71a5f1;
+  background-color: #71a5f1;
+  transition: all 0.18s;
+}
+.btn-img:hover.btn-img::after {
+  border: 0.1rem solid #71edf1;
+  background-color: #71edf1;
+}
+.btn-img:active.btn-img::after {
+  border: 0.1rem solid #71f19c;
+  background-color: #71f19c;
+  transform: translateY(0.1rem);
+}
+.input-btn:checked .btn-img::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+.slider-img {
+  transition: all 0.4s;
+  width: 60rem;
+  height: 30rem;
+  background-size: cover;
+  background-position: center;
+  flex: 0 0 100%;
+}
+.slide1 {
+  background-image: url(./jpg/1.jpg);
+}
+.slide2 {
+  background-image: url(./jpg/2.jpg);
+}
+.slide3 {
+  background-image: url(./jpg/3.jpg);
+}
+.slide4 {
+  background-image: url(./jpg/4.jpg);
+}
+.slide5 {
+  background-image: url(./jpg/5.jpg);
+}
+
+#slide1:checked ~ .slider-box > *.slider-img {
+  transform: translateX(-0%);
+}
+#slide2:checked ~ .slider-box > *.slider-img {
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slider-box > *.slider-img {
+  transform: translateX(-200%);
+}
+#slide4:checked ~ .slider-box > *.slider-img {
+  transform: translateX(-300%);
+}
+#slide5:checked ~ .slider-box > *.slider-img {
+  transform: translateX(-400%);
+}
+
+#slide1:checked ~ .slider-footer > .slider-control > .label1::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+#slide2:checked ~ .slider-footer > .slider-control > .label2::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+#slide3:checked ~ .slider-footer > .slider-control > .label3::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+#slide4:checked ~ .slider-footer > .slider-control > .label4::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+#slide5:checked ~ .slider-footer > .slider-control > .label5::after {
+  border: 0.1rem solid #71a5f1;
+  background-color: #243857;
+}
+#slide1:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'My face when I got the task to make a slider without JS'; */
+  transform: translateX(0);
+}
+#slide2:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: suggested it was a joke'; */
+  transform: translateX(-100%);
+}
+#slide3:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: realize that no. NOOOO!'; */
+  transform: translateX(-200%);
+}
+#slide4:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Me: hope we will rock you'; */
+  transform: translateX(-300%);
+}
+#slide5:checked ~ .slider-footer > .slider-description > .slide-text {
+  /* content: 'Hah that was easy!'; */
+  transform: translateX(-400%);
+}
+@media only screen and (max-width: 500px) {
+  * {
+    font-size: 55%;
+  }
+  .slider-footer {
+    padding-top: 1.5rem;
+    flex-direction: column-reverse;
+    row-gap: 1rem;
+  }
+  .slider-control {
+    align-self: center;
+  }
+  .slider-img {
+    height: 47vw;
+  }
+  main {
+    padding: 1.5vw;
+  }
+  .heading-txt::after {
+    content: 'now: Mobile version';
+  }
+}
